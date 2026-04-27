@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting System Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            background-image: url('/images/login_background.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: "SUSE", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(51, 51, 51, 0.8); /* Semi-transparent background for header */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Welcome message at the top */
+        .welcome {
+            margin-top: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        /* Navigation styling */
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for nav links */
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(119, 119, 119, 0.8); /* Hover effect */
+        }
+
+        /* Vote button styling */
+        .vote-button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .vote-button:hover {
+            background: #218838;
+        }
+
+        /* Flex container to push footer to bottom */
+        .flex-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* Help and Support styling */
+        .help-support {
+            text-align: center;
+            margin: 250px 0 20px 0; /* Increased top margin for more space */
+            font-size: 18px;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(51, 51, 51, 0.8); /* Semi-transparent background for footer */
+            color: #fff;
+            width: 100%;
+            position: relative;
+        }
+
+        /* Make the layout responsive for smaller screens */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="welcome">
+            <h2>Welcome, <%= user.username %>!</h2>
+        </div>
+
+        <nav>
+            <a href="/dashboard">Home</a>
+            <a href="/profile">Profile</a>
+            <a href="/results">Results</a>
+            <a href="/participants">View Participants</a>
+            <a href="/offline-centers">Offline Centers</a>
+            <a href="/logout">Logout</a>
+            <button id="voteButton" class="vote-button">Cast Your Vote</button>
+
+<script>
+  document.getElementById("voteButton").onclick = function () {
+    window.location.href = "http://192.168.107.88:3000/"; // Change this to your desired URL
+  };
+</script>
+
+        </nav>
+
+        <!-- Help and Support section -->
+        <div class="help-support">
+            <p><a href="/help-and-support" style="color: white; text-decoration: underline;">Help and Support</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MyVotingSite.com</p>
+    </footer>
+</body>
+</html>

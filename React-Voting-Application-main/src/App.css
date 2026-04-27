@@ -1,0 +1,442 @@
+/* ===========================
+   GLOBAL STYLES & ANIMATIONS
+   =========================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* ===========================
+   LOGIN CONTAINER - Hero Section
+   =========================== */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  padding: 2rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.welcome-message {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  max-width: 600px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  animation: slideDown 0.8s ease-out;
+}
+
+.welcome-subtext {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #b0b0b0;
+  max-width: 500px;
+  line-height: 1.6;
+  animation: fadeIn 1s ease-out 0.2s both;
+}
+
+/* ===========================
+   LOGIN BUTTON - Premium Style
+   =========================== */
+
+.login-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 1.2rem 3rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+  letter-spacing: 0.5px;
+  animation: fadeIn 1s ease-out 0.4s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.login-button:hover::before {
+  left: 100%;
+}
+
+.login-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.5);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.login-button:active {
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   CONNECTED CONTAINER
+   =========================== */
+
+.connected-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  padding: 3rem 2rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.connected-header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: slideDown 0.6s ease-out;
+}
+
+.connected-account {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #b0b0b0;
+  padding: 0.8rem 1.5rem;
+  background: rgba(139, 92, 246, 0.1);
+  border-left: 3px solid #667eea;
+  border-radius: 8px;
+  max-width: 600px;
+  word-break: break-all;
+  animation: fadeIn 0.6s ease-out 0.1s both;
+}
+
+.connected-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+  letter-spacing: 0.5px;
+  animation: fadeIn 0.6s ease-out 0.2s both;
+}
+
+.connected-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.5);
+}
+
+.connected-button:active {
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   INPUT FIELD STYLING
+   =========================== */
+
+input[type=number] {
+  padding: 0.8rem 1rem;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e0e0e0;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+input[type=number]::placeholder {
+  color: #808080;
+}
+
+input[type=number]:focus {
+  outline: none;
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+/* ===========================
+   CANDIDATES TABLE - Glass Effect
+   =========================== */
+
+.candidates-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 2rem;
+  animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+.candidates-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #a8edea;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.candidates-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(139, 92, 246, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
+}
+
+.candidates-table thead {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+}
+
+.candidates-table th {
+  padding: 1.2rem;
+  text-align: left;
+  color: #a8edea;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.candidates-table td {
+  padding: 1rem 1.2rem;
+  color: #d0d0d0;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+  font-size: 0.95rem;
+}
+
+.candidates-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.candidates-table tbody tr:hover {
+  background: rgba(139, 92, 234, 0.15);
+  transform: scale(1.01);
+}
+
+.candidates-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===========================
+   VOTING STATUS INDICATORS
+   =========================== */
+
+.voting-status-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background: rgba(168, 237, 234, 0.2);
+  color: #a8edea;
+  border: 1px solid rgba(168, 237, 234, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.voted-badge {
+  padding: 0.7rem 1.5rem;
+  border-radius: 12px;
+  background: rgba(102, 126, 234, 0.2);
+  color: #a8edea;
+  border: 1px solid rgba(102, 126, 234, 0.4);
+  font-weight: 600;
+  text-align: center;
+  margin: 1rem 0;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+@media (max-width: 768px) {
+  .welcome-message {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .connected-header {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .candidates-table {
+    font-size: 0.85rem;
+  }
+
+  .candidates-table th,
+  .candidates-table td {
+    padding: 0.8rem;
+  }
+
+  .login-button,
+  .connected-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .connected-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .login-container {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-message {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .connected-header {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .welcome-subtext {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .connected-account {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .candidates-table {
+    font-size: 0.75rem;
+  }
+
+  .candidates-table th,
+  .candidates-table td {
+    padding: 0.6rem;
+  }
+
+  .login-button,
+  .connected-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .candidates-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===========================
+   ACCESSIBILITY & UTILITY
+   =========================== */
+
+.container-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.status-message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.status-message.success {
+  background: rgba(52, 211, 153, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.4);
+}
+
+.status-message.error {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+

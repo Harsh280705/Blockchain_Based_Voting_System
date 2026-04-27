@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Centers</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* Offline Centers Styles */
+        body {
+            background-color: black;
+            font-family: "SUSE", sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .offline-centers-container {
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .offline-centers-container h1 {
+            color: #f0f0f0;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .offline-centers-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .offline-centers-list li {
+            background-color: #444;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        .offline-centers-list li:hover {
+            background-color: #555;
+        }
+
+        .offline-centers-list li strong {
+            color: #f0f0f0;
+        }
+
+        .offline-centers-list li br {
+            margin-bottom: 10px;
+        }
+
+        .offline-centers-list li a {
+            color: #f0f0f0;
+            text-decoration: underline;
+            font-size: 14px;
+        }
+
+        .offline-centers-list li a:hover {
+            color: #ddd;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            .offline-centers-container {
+                padding: 20px;
+                width: 95%;
+            }
+
+            .offline-centers-list li {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-centers-container">
+        <h1>Offline Centers</h1>
+        <ul class="offline-centers-list">
+            <li>
+                <strong>Address:</strong> Majiwada, Thane West, Thane, Maharashtra<br>
+                <strong>Contact:</strong> (022) 1234-5678<br>
+                <a href="https://www.google.com/maps?q=Majiwada,+Thane+West,+Thane" target="_blank">View on Google Maps</a>
+            </li>
+            <li>
+                <strong>Address:</strong> Ghodbunder Road, Kasarvadavali, Thane West, Thane, Maharashtra<br>
+                <strong>Contact:</strong> (022) 2345-6789<br>
+                <a href="https://www.google.com/maps?q=Ghodbunder+Road,+Kasarvadavali,+Thane+West" target="_blank">View on Google Maps</a>
+            </li>
+            <li>
+                <strong>Address:</strong> Vasant Vihar, Pokhran Road No. 2, Thane West, Maharashtra<br>
+                <strong>Contact:</strong> (022) 3456-7890<br>
+                <a href="https://www.google.com/maps?q=Vasant+Vihar,+Pokhran+Road+No+2,+Thane+West" target="_blank">View on Google Maps</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

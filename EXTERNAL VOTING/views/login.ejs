@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyVotingHub.com</title>
+    <link href='https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap' rel='stylesheet'>
+
+    <style>
+        /* CSS for the Login Page */
+
+        * {
+            font-family: "SUSE", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            position: relative;
+        }
+
+        .card {
+            height: 380px;
+            width: 500px;
+            background-color: rgb(56, 55, 55);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .login {
+            color: white;
+        }
+
+        .inputbox input {
+            margin: 20px;
+            border-radius: 20px;
+            height: 30px;
+            width: 400px;
+            padding: 20px 45px 20px 20px;
+        }
+
+        .inputbox input::placeholder {
+            color: aliceblue;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            width: 420px;
+            padding: 0px 20px;
+        }
+
+        .remember-forgot a {
+            color: aliceblue;
+        }
+
+        .button button {
+            margin: 50px 0px;
+            border-radius: 20px;
+            background-color: white;
+            width: 400px;
+            height: 40px;
+        }
+
+        .offline-centers-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .offline-centers-list li {
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            background-color: white;
+        }
+
+        marquee {
+            color: white;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* Register Link Styling */
+        .register-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: yellow;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Register link positioned at top right of the page -->
+    <!-- <a href="/register" class="register-link">Not a user? Register here</a> -->
+
+    <div class="card">
+        <div class="login">
+            <h1>Login</h1>
+        </div>
+
+        <!-- Login Form with Username and Password -->
+        <form action="/login" method="POST">
+            <div class="inputbox">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="inputbox">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox" name="remember"> Remember me
+                </label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <div class="button">
+                <button type="submit">Login</button>
+            </div>
+                <div class="registration-note">
+                    <p>Don't have an account? <a href="/register" class="register-link">Not a user? Register here</a></p>
+                </div>
+        </form>
+
+        <!-- Helpline number in marquee format -->
+        <marquee>📞 For assistance, call our helpline: 1800-123-4567 📞</marquee>
+    </div>
+</body>
+
+</html>

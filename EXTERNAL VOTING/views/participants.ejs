@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Participants</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            background-color: black;
+            font-family: "SUSE", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            overflow-y: scroll;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: #bbb 1px solid;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            background: #555;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #777;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+            font-size: 28px;
+        }
+
+        .participants {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .participant {
+            background-color: #101011;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .participant:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #ede8e8;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .vote-button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .vote-button:hover {
+            background: #218838;
+        }
+
+        @media (max-width: 768px) {
+            .participants {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/dashboard">Home</a>
+            <a href="/logout">Logout</a>
+            <!-- Cast Your Vote Button in the Navigation Bar -->
+            <button id="voteButton" class="vote-button">Cast Your Vote</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Election Participants</h1>
+        <div class="participants">
+            <div class="participant">
+                <img src="/images/1.jpeg" alt="Party Logo">
+                <h2>MARK</h2>
+                <p>Party: Party A</p>
+            </div>
+            <div class="participant">
+                <img src="/images/2.jpeg" alt="Party Logo">
+                <h2>MIKE</h2>
+                <p>Party: Party B</p>
+            </div>
+            <div class="participant">
+                <img src="/images/3.jpeg" alt="Party Logo">
+                <h2>HENRY</h2>
+                <p>Party: Party C</p>
+            </div>
+            <div class="participant">
+                <img src="/images/4.jpeg" alt="Party Logo">
+                <h2>ROCK</h2>
+                <p>Party: Party D</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MyVotingSite.com</p>
+    </footer>
+
+    <script>
+        // Use the same routing as in the dashboard for the "Cast Your Vote" button
+        document.getElementById("voteButton").onclick = function () {
+            window.location.href = "http://192.168.151.88:3000"; // Same URL as the dashboard
+        };
+    </script>
+</body>
+
+</html>

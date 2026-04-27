@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css"> <!-- Link your CSS file -->
+    <title>Help and Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            color: #343a40;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        form {
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold; /* Bold button text */
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .faq {
+            margin-top: 20px;
+        }
+
+        .faq h2 {
+            color: #343a40;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        .faq-item h3 {
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 5px;
+        }
+
+        .instructions-link {
+            font-weight: bold; /* Bold the instructions text */
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline; /* Underline the instructions text */
+        }
+
+        .back-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Help and Support</h1>
+        
+        <form action="/submit-support" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <div class="faq">
+            <h2>Frequently Asked Questions (FAQs)</h2>
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(0)">What is the voting process?</h3>
+                <p>The voting process involves registering to vote, selecting a candidate, and submitting your vote. Please refer to the <span class="instructions-link" onclick="window.location.href='/voting-instructions'">Voting Instructions</span> for more details.</p>
+            </div>
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(1)">How can I change my registration details?</h3>
+                <p>You can change your registration details by mailing us at votingsite@gmail.com. We will get back to you regarding it.</p>
+            </div>
+            <div class="faq-item">
+                <h3 onclick="toggleFAQ(2)">What to do if I encounter issues while voting?</h3>
+                <p>If you encounter issues while voting, please reach out to our support team using the form above.</p>
+            </div>
+        </div>
+
+        <!-- Back to Dashboard Button -->
+        <a href="/dashboard" class="back-button">Back to Dashboard</a>
+    </div>
+
+    <script>
+        function toggleFAQ(index) {
+            const faqItems = document.querySelectorAll('.faq-item p');
+            faqItems[index].style.display = faqItems[index].style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
